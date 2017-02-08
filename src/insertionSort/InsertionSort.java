@@ -6,15 +6,13 @@ import java.util.*;
 public class InsertionSort {
 	
 	public static void arrayInsert(int[] arr, int n){
-		int temp = 0;
-		while(n > 0){
-			if(arr[n-1] > arr[n]){
-				temp = arr[n];
-				arr[n] = arr[n-1];
-				arr[n-1] = temp;
-			}
-			n--;
+		int key = arr[n];
+		int j = n - 1;
+		while(j >= 0 && key < arr[j]){
+			arr[j+1] = arr[j];
+			j--;
 		}
+		arr[j+1] = key;
 	}
 	
 	public static void arraySort(int[] arr, int n){
@@ -37,10 +35,11 @@ public class InsertionSort {
 		scn.close();
 		
 		insertionSort(arr);
-		int searchValue = binarySearch.BinarySearch.binarySearch(arr, 0, arr.length - 1, 7);
 		for(int x : arr){
 			System.out.print(x + "\n");
 		}
+		
+		int searchValue = binarySearch.BinarySearch.binarySearch(arr, 0, arr.length - 1, 7);
 		
 		System.out.print("Searched for 7: " + searchValue);
 	}

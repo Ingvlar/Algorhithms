@@ -2,6 +2,10 @@ package binarySearch;
 
 public class BinarySearch {
 	public static int binarySearch(int[] arr, int min, int max, int val){
+		if(min >= max){
+			return -1;
+		}
+		
 		int mid = (min + max) / 2;
 		if(val < arr[mid]){
 			return binarySearch(arr, min, mid, val);
