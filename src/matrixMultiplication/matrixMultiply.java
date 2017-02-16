@@ -13,7 +13,6 @@ public class matrixMultiply {
 		
 		return c;
 	}
-	
 	public static void main(String[] args) {
 		int[][] matrix_a = {{2,3},{9,4}};
 		int[][] matrix_b = {{5,4},{3,9}};
